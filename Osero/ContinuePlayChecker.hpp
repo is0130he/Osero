@@ -13,8 +13,8 @@
 class ContinuePlayChecker{
 public:
     //置ける場所があるかチェック
-    int checkContinuePlay(stone_status color,Stone *table[]);
+    int checkContinuePlay(stone_status color);
     //テーブルが全て埋まっているかチェック
-    bool checkAllUse(Stone *table[]);
+    bool checkAllUse();
 };
 #endif /* ContinuePlayChecker_hpp */

@@ -8,6 +8,7 @@
 
 #include "Stone.hpp"
 
+extern Stone *table[TABLE_SIZE];
 
 //デフォルトコンストラクタ
 Stone::Stone(){}
@@ -26,7 +27,7 @@ void Stone::setStatus(stone_status status){
     this->status = status;
 }
 //石の出力
-void Stone::printStone(int location,Stone *table[]){
+void Stone::printStone(int location){
     stone_status status;
     
     status = table[location]->getStatus();

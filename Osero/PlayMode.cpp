@@ -8,6 +8,8 @@
 
 #include "PlayMode.hpp"
 
+extern Stone *table[TABLE_SIZE];
+
 void mainLoutine(){
     //インスタンス生成
     Table *table_instance;
@@ -15,8 +17,6 @@ void mainLoutine(){
     int length;
     length = table_instance->getSideLength();
     
-    Stone *table[length *length];
-    
     //テーブルの生成
-    table_instance->createTable(table);
+    table_instance->createTable();
 }

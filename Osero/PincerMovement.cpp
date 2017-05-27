@@ -7,18 +7,18 @@
 //
 
 #include "PincerMovement.hpp"
-void PincerMovement::checkAllPincerMovement(stone_status color,int location,Stone *table[],int *check){
-    *(check++) = checkOnPincerMovement(color, location, table);
-    *(check++) = checkRightOnPincerMovement(color, location, table);
-    *(check++) = checkRightPincerMovement(color, location, table);
-    *(check++) = checkRightUnderPincerMovement(color, location, table);
-    *(check++) = checkUnderPincerMovement(color, location, table);
-    *(check++) = checkLeftUnderPincerMovement(color, location, table);
-    *(check++) = checkLeftPincerMovement(color, location, table);
-    *(check) = checkLeftOnPincerMovement(color, location, table);
+void PincerMovement::checkAllPincerMovement(stone_status color,int location,int *check){
+    *(check++) = checkOnPincerMovement(color, location);
+    *(check++) = checkRightOnPincerMovement(color, location);
+    *(check++) = checkRightPincerMovement(color, location);
+    *(check++) = checkRightUnderPincerMovement(color, location);
+    *(check++) = checkUnderPincerMovement(color, location);
+    *(check++) = checkLeftUnderPincerMovement(color, location);
+    *(check++) = checkLeftPincerMovement(color, location);
+    *(check) = checkLeftOnPincerMovement(color, location);
 }
 
-int PincerMovement::checkOnPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkOnPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -49,7 +49,7 @@ int PincerMovement::checkOnPincerMovement(stone_status color,int location,Stone 
     return -1;
 }
 
-int PincerMovement::checkUnderPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkUnderPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -81,7 +81,7 @@ int PincerMovement::checkUnderPincerMovement(stone_status color,int location,Sto
     return -1;
 }
 
-int PincerMovement::checkLeftPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkLeftPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -113,7 +113,7 @@ int PincerMovement::checkLeftPincerMovement(stone_status color,int location,Ston
     return -1;
 }
 
-int PincerMovement::checkRightPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkRightPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -145,7 +145,7 @@ int PincerMovement::checkRightPincerMovement(stone_status color,int location,Sto
     return -1;
 }
 
-int PincerMovement::checkLeftOnPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkLeftOnPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -177,7 +177,7 @@ int PincerMovement::checkLeftOnPincerMovement(stone_status color,int location,St
     return -1;
 }
 
-int PincerMovement::checkRightOnPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkRightOnPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -209,7 +209,7 @@ int PincerMovement::checkRightOnPincerMovement(stone_status color,int location,S
     return -1;
 }
 
-int PincerMovement::checkLeftUnderPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkLeftUnderPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -241,7 +241,7 @@ int PincerMovement::checkLeftUnderPincerMovement(stone_status color,int location
     return -1;
 }
 
-int PincerMovement::checkRightUnderPincerMovement(stone_status color,int location,Stone *table[]){
+int PincerMovement::checkRightUnderPincerMovement(stone_status color,int location){
     //カウンタ変数
     int i=1;
     int place;
@@ -274,7 +274,7 @@ int PincerMovement::checkRightUnderPincerMovement(stone_status color,int locatio
 }
 
 //石を挟む
-void changePincerMovement(int direction,stone_status color, int location,int pair_location,Stone *table[]){
+void changePincerMovement(int direction,stone_status color, int location,int pair_location){
     //挟んだ色に変更
     for(;location != pair_location; location += direction){
         table[location]->setStatus(color);

@@ -10,7 +10,7 @@
 #define Stone_hpp
 
 #include <stdio.h>
-
+#include"Table.hpp"
 //石の状態
 enum stone_status{
     nothing = 0,
@@ -34,7 +34,7 @@ public:
     //石の状態のセッター
     void setStatus(stone_status status);
     //石の出力
-    void printStone(int location,Stone *table[]);
+    void printStone(int location);
     //逆の石の色を確認
     stone_status checkReverseColor(stone_status color);
 };

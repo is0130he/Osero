@@ -27,15 +27,15 @@ private:
     const int side_length = 8;
 public:
     //テーブル生成
-    bool createTable(Stone *table[]);
+    bool createTable();
     //一辺の長さのゲッター
     int getSideLength();
     //座標のゲッター
     bool checkCoordinate(int coordinate);
     //テーブルの出力
-    void dispTable(Stone *table[]);
+    void dispTable();
     //テーブルの更新(石を置いた後)
-    void updateTable(int direction,stone_status color, int location,int pair_location,Stone *table[],int *check);
+    void updateTable(int direction,stone_status color, int location,int pair_location,int *check);
 };
 
 #endif /*Table_hpp*/
