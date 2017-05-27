@@ -15,4 +15,5 @@ class PlayMode{
 public:
     void mainLoutine(void);
 };
+//test
 #endif /*PlayMode_hpp*/
