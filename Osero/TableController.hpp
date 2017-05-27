@@ -28,7 +28,8 @@
 #define RIGHT_UNDER (RIGHT + UNDER)
 //左下
 #define LEFT_UNDER (LEFT + UNDER)
-
+//
+int a;
 
 class TableController : public Table{
 public:
