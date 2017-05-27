@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D945D7991ED8CB85003A6AE6 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7981ED8CB85003A6AE6 /* main.cpp */; };
+		D945D7A31ED8CBCD003A6AE6 /* Stone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7A11ED8CBCD003A6AE6 /* Stone.cpp */; };
+		D945D7A61ED8CBE2003A6AE6 /* Table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7A41ED8CBE2003A6AE6 /* Table.cpp */; };
+		D945D7A91ED8CE1C003A6AE6 /* PlayMode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7A71ED8CE1C003A6AE6 /* PlayMode.cpp */; };
+		D945D7AC1ED8FEFD003A6AE6 /* TableController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7AA1ED8FEFD003A6AE6 /* TableController.cpp */; };
+		D945D7AF1ED90565003A6AE6 /* PincerMovement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7AD1ED90565003A6AE6 /* PincerMovement.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,16 @@
 /* Begin PBXFileReference section */
 		D945D7951ED8CB85003A6AE6 /* Osero */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Osero; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945D7981ED8CB85003A6AE6 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D945D7A11ED8CBCD003A6AE6 /* Stone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stone.cpp; sourceTree = "<group>"; };
+		D945D7A21ED8CBCD003A6AE6 /* Stone.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Stone.hpp; sourceTree = "<group>"; };
+		D945D7A41ED8CBE2003A6AE6 /* Table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Table.cpp; sourceTree = "<group>"; };
+		D945D7A51ED8CBE2003A6AE6 /* Table.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Table.hpp; sourceTree = "<group>"; };
+		D945D7A71ED8CE1C003A6AE6 /* PlayMode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayMode.cpp; sourceTree = "<group>"; };
+		D945D7A81ED8CE1C003A6AE6 /* PlayMode.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PlayMode.hpp; sourceTree = "<group>"; };
+		D945D7AA1ED8FEFD003A6AE6 /* TableController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableController.cpp; sourceTree = "<group>"; };
+		D945D7AB1ED8FEFD003A6AE6 /* TableController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TableController.hpp; sourceTree = "<group>"; };
+		D945D7AD1ED90565003A6AE6 /* PincerMovement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PincerMovement.cpp; sourceTree = "<group>"; };
+		D945D7AE1ED90565003A6AE6 /* PincerMovement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PincerMovement.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +73,16 @@
 			isa = PBXGroup;
 			children = (
 				D945D7981ED8CB85003A6AE6 /* main.cpp */,
+				D945D7A11ED8CBCD003A6AE6 /* Stone.cpp */,
+				D945D7A21ED8CBCD003A6AE6 /* Stone.hpp */,
+				D945D7A41ED8CBE2003A6AE6 /* Table.cpp */,
+				D945D7A51ED8CBE2003A6AE6 /* Table.hpp */,
+				D945D7A71ED8CE1C003A6AE6 /* PlayMode.cpp */,
+				D945D7A81ED8CE1C003A6AE6 /* PlayMode.hpp */,
+				D945D7AA1ED8FEFD003A6AE6 /* TableController.cpp */,
+				D945D7AB1ED8FEFD003A6AE6 /* TableController.hpp */,
+				D945D7AD1ED90565003A6AE6 /* PincerMovement.cpp */,
+				D945D7AE1ED90565003A6AE6 /* PincerMovement.hpp */,
 			);
 			path = Osero;
 			sourceTree = "<group>";
@@ -119,7 +144,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D945D7AC1ED8FEFD003A6AE6 /* TableController.cpp in Sources */,
+				D945D7AF1ED90565003A6AE6 /* PincerMovement.cpp in Sources */,
+				D945D7A91ED8CE1C003A6AE6 /* PlayMode.cpp in Sources */,
+				D945D7A61ED8CBE2003A6AE6 /* Table.cpp in Sources */,
 				D945D7991ED8CB85003A6AE6 /* main.cpp in Sources */,
+				D945D7A31ED8CBCD003A6AE6 /* Stone.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
