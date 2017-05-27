@@ -31,7 +31,7 @@ public:
     int getSideLength();
     //座標のゲッター
     bool checkCoordinate(int coordinate);
-    ////
+    //////
 };
 
 #endif /*Table_hpp*/
