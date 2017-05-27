@@ -7,6 +7,16 @@
 //
 
 #include "PincerMovement.hpp"
+void PincerMovement::checkAllPincerMovement(stone_status color,int location,Stone *table[],int *check){
+    *(check++) = checkOnPincerMovement(color, location, table);
+    *(check++) = checkRightOnPincerMovement(color, location, table);
+    *(check++) = checkRightPincerMovement(color, location, table);
+    *(check++) = checkRightUnderPincerMovement(color, location, table);
+    *(check++) = checkUnderPincerMovement(color, location, table);
+    *(check++) = checkLeftUnderPincerMovement(color, location, table);
+    *(check++) = checkLeftPincerMovement(color, location, table);
+    *(check) = checkLeftOnPincerMovement(color, location, table);
+}
 
 int PincerMovement::checkOnPincerMovement(stone_status color,int location,Stone *table[]){
     //カウンタ変数
@@ -17,6 +27,10 @@ int PincerMovement::checkOnPincerMovement(stone_status color,int location,Stone 
     if(place_check == true){
         //すぐ上に置くものと同じ色の石がある場合
         if(color == table[location + ON]->getStatus()){
+            return -1;
+        }
+        //すぐ上には石がない場合
+        else if(nothing == table[location + ON]->getStatus()){
             return -1;
         }
     }
@@ -30,7 +44,7 @@ int PincerMovement::checkOnPincerMovement(stone_status color,int location,Stone 
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -46,6 +60,11 @@ int PincerMovement::checkUnderPincerMovement(stone_status color,int location,Sto
         if(color == table[location + UNDER]->getStatus()){
             return -1;
         }
+        //すぐ下には石がない場合
+        else if(nothing == table[location + UNDER]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、下に同じ色の石があるかチェック
     do{
@@ -57,7 +76,7 @@ int PincerMovement::checkUnderPincerMovement(stone_status color,int location,Sto
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -73,6 +92,11 @@ int PincerMovement::checkLeftPincerMovement(stone_status color,int location,Ston
         if(color == table[location + LEFT]->getStatus()){
             return -1;
         }
+        //すぐ左には石がない場合
+        else if(nothing == table[location + LEFT]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、左に同じ色の石があるかチェック
     do{
@@ -84,7 +108,7 @@ int PincerMovement::checkLeftPincerMovement(stone_status color,int location,Ston
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -100,6 +124,11 @@ int PincerMovement::checkRightPincerMovement(stone_status color,int location,Sto
         if(color == table[location + RIGHT]->getStatus()){
             return -1;
         }
+        //すぐ右には石がない場合
+        else if(nothing == table[location + RIGHT]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、右に同じ色の石があるかチェック
     do{
@@ -111,7 +140,7 @@ int PincerMovement::checkRightPincerMovement(stone_status color,int location,Sto
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -127,6 +156,11 @@ int PincerMovement::checkLeftOnPincerMovement(stone_status color,int location,St
         if(color == table[location + LEFT_ON]->getStatus()){
             return -1;
         }
+        //すぐ左上には石がない場合
+        else if(nothing == table[location + LEFT_ON]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、左上に同じ色の石があるかチェック
     do{
@@ -138,7 +172,7 @@ int PincerMovement::checkLeftOnPincerMovement(stone_status color,int location,St
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -154,6 +188,11 @@ int PincerMovement::checkRightOnPincerMovement(stone_status color,int location,S
         if(color == table[location + RIGHT_ON]->getStatus()){
             return -1;
         }
+        //すぐ右上には石がない場合
+        else if(nothing == table[location + RIGHT_ON]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、右上に同じ色の石があるかチェック
     do{
@@ -165,7 +204,7 @@ int PincerMovement::checkRightOnPincerMovement(stone_status color,int location,S
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -181,6 +220,11 @@ int PincerMovement::checkLeftUnderPincerMovement(stone_status color,int location
         if(color == table[location + LEFT_UNDER]->getStatus()){
             return -1;
         }
+        //すぐ左下には石がない場合
+        else if(nothing == table[location + LEFT_UNDER]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、左下に同じ色の石があるかチェック
     do{
@@ -192,7 +236,7 @@ int PincerMovement::checkLeftUnderPincerMovement(stone_status color,int location
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
 }
@@ -208,6 +252,11 @@ int PincerMovement::checkRightUnderPincerMovement(stone_status color,int locatio
         if(color == table[location + RIGHT_UNDER]->getStatus()){
             return -1;
         }
+        //すぐ右下には石がない場合
+        else if(nothing == table[location + RIGHT_UNDER]->getStatus()){
+            return -1;
+        }
+
     }
     //(最大6つまで)2つ目以降、右下に同じ色の石があるかチェック
     do{
@@ -219,7 +268,15 @@ int PincerMovement::checkRightUnderPincerMovement(stone_status color,int locatio
                 return place;
             }
         }
-    }while(i <= 6);
+    }while((i <= 6)||(nothing != table[place]->getStatus()));
     //最後まで挟めるものが見つからなかった場合
     return -1;
+}
+
+//石を挟む
+void changePincerMovement(int direction,stone_status color, int location,int pair_location,Stone *table[]){
+    //挟んだ色に変更
+    for(;location != pair_location; location += direction){
+        table[location]->setStatus(color);
+    }
 }

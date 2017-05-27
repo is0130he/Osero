@@ -13,6 +13,8 @@
 		D945D7A91ED8CE1C003A6AE6 /* PlayMode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7A71ED8CE1C003A6AE6 /* PlayMode.cpp */; };
 		D945D7AC1ED8FEFD003A6AE6 /* TableController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7AA1ED8FEFD003A6AE6 /* TableController.cpp */; };
 		D945D7AF1ED90565003A6AE6 /* PincerMovement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D945D7AD1ED90565003A6AE6 /* PincerMovement.cpp */; };
+		D95BAF8B1ED936B100464AF9 /* ContinuePlayChecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D95BAF891ED936B100464AF9 /* ContinuePlayChecker.cpp */; };
+		D95BAF8E1ED9556F00464AF9 /* Turn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D95BAF8C1ED9556F00464AF9 /* Turn.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,10 @@
 		D945D7AB1ED8FEFD003A6AE6 /* TableController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TableController.hpp; sourceTree = "<group>"; };
 		D945D7AD1ED90565003A6AE6 /* PincerMovement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PincerMovement.cpp; sourceTree = "<group>"; };
 		D945D7AE1ED90565003A6AE6 /* PincerMovement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PincerMovement.hpp; sourceTree = "<group>"; };
+		D95BAF891ED936B100464AF9 /* ContinuePlayChecker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContinuePlayChecker.cpp; sourceTree = "<group>"; };
+		D95BAF8A1ED936B100464AF9 /* ContinuePlayChecker.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContinuePlayChecker.hpp; sourceTree = "<group>"; };
+		D95BAF8C1ED9556F00464AF9 /* Turn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Turn.cpp; sourceTree = "<group>"; };
+		D95BAF8D1ED9556F00464AF9 /* Turn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Turn.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,10 @@
 				D945D7AB1ED8FEFD003A6AE6 /* TableController.hpp */,
 				D945D7AD1ED90565003A6AE6 /* PincerMovement.cpp */,
 				D945D7AE1ED90565003A6AE6 /* PincerMovement.hpp */,
+				D95BAF891ED936B100464AF9 /* ContinuePlayChecker.cpp */,
+				D95BAF8A1ED936B100464AF9 /* ContinuePlayChecker.hpp */,
+				D95BAF8C1ED9556F00464AF9 /* Turn.cpp */,
+				D95BAF8D1ED9556F00464AF9 /* Turn.hpp */,
 			);
 			path = Osero;
 			sourceTree = "<group>";
@@ -145,6 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D945D7AC1ED8FEFD003A6AE6 /* TableController.cpp in Sources */,
+				D95BAF8B1ED936B100464AF9 /* ContinuePlayChecker.cpp in Sources */,
+				D95BAF8E1ED9556F00464AF9 /* Turn.cpp in Sources */,
 				D945D7AF1ED90565003A6AE6 /* PincerMovement.cpp in Sources */,
 				D945D7A91ED8CE1C003A6AE6 /* PlayMode.cpp in Sources */,
 				D945D7A61ED8CBE2003A6AE6 /* Table.cpp in Sources */,
@@ -278,6 +290,7 @@
 				D945D79E1ED8CB85003A6AE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

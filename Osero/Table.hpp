@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include"Stone.hpp"
+#include "PincerMovement.hpp"
 
 //一辺の長さ
 #define SIDE_LENGTH 10
@@ -31,7 +32,10 @@ public:
     int getSideLength();
     //座標のゲッター
     bool checkCoordinate(int coordinate);
-    //////
+    //テーブルの出力
+    void dispTable(Stone *table[]);
+    //テーブルの更新(石を置いた後)
+    void updateTable(int direction,stone_status color, int location,int pair_location,Stone *table[],int *check);
 };
 
 #endif /*Table_hpp*/

@@ -25,6 +25,7 @@ private:
     stone_status status;
 public:
     //デフォルトコンストラクタ
+    Stone();
     Stone(stone_status status);
     //デストラクタ
     ~Stone();
@@ -32,5 +33,9 @@ public:
     stone_status getStatus(void);
     //石の状態のセッター
     void setStatus(stone_status status);
+    //石の出力
+    void printStone(int location,Stone *table[]);
+    //逆の石の色を確認
+    stone_status checkReverseColor(stone_status color);
 };
 #endif /*Stone_hpp*/ 
