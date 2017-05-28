@@ -11,9 +11,13 @@
 
 #include <stdio.h>
 #include"Table.hpp"
+#include "ContinuePlayChecker.hpp"
+#include "Turn.hpp"
 class PlayMode{
 public:
     void mainLoutine(void);
+    void playFirst_User(void);
+    void drawFirst_User(void);
 };
 //test
 #endif /*PlayMode_hpp*/

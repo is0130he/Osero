@@ -18,7 +18,7 @@
 */
 
 //テーブル情報
-extern Stone *table[TABLE_SIZE];
+Stone *table[TABLE_SIZE];
 
 bool Table::createTable(){
     //カウンタ変数
@@ -100,65 +100,4 @@ void Table::dispTable(){
         printf("\n");
     }
 }
-
-void Table::updateTable(int direction,stone_status color, int location,int pair_location,int *check){
-    //上から順に時計回りで更新
-    int place;
-    //インスタンス生成
-    PincerMovement *pincer_instance;
-    pincer_instance = new PincerMovement();
-    
-    //上
-    place = pincer_instance->checkOnPincerMovement(color, location);
-    pincer_instance->changePincerMovement(ON, color, location, pair_location, table);
-    //右上
-    place = pincer_instance->checkRightOnPincerMovement(color, location);
-    pincer_instance->changePincerMovement(RIGHT_ON, color, location, pair_location, table);
-    //右
-    place = pincer_instance->checkRightPincerMovement(color, location);
-    pincer_instance->changePincerMovement(RIGHT, color, location, pair_location, table);
-    //右下
-    place = pincer_instance->checkRightUnderPincerMovement(color, location);
-    pincer_instance->changePincerMovement(RIGHT_UNDER, color, location, pair_location, table);
-    //下
-    place = pincer_instance->checkUnderPincerMovement(color, location);
-    pincer_instance->changePincerMovement(UNDER, color, location, pair_location, table);
-    //左下
-    place = pincer_instance->checkLeftUnderPincerMovement(color, location);
-    pincer_instance->changePincerMovement(LEFT_UNDER, color, location, pair_location, table);
-    //左
-    place = pincer_instance->checkLeftPincerMovement(color, location);
-    pincer_instance->changePincerMovement(LEFT, color, location, pair_location, table);
-    //左上
-    place = pincer_instance->checkLeftOnPincerMovement(color, location);
-    pincer_instance->changePincerMovement(LEFT_ON, color, location, pair_location, table);
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

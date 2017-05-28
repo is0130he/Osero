@@ -18,7 +18,9 @@
  */
 
 bool TableController::checkOnPlace(int location){
-    if((0<=location)&&(location<=8)){
+    int check = location / 8;
+    
+    if(check == 0){
         return false;
     }
     return true;
@@ -33,7 +35,9 @@ bool TableController::checkOnPlace(int location){
  *@return :true(テーブルがある),false(テーブルがない)
  */
 bool TableController::checkUnderPlace(int location){
-    if((56<=location)&&(location<=63)){
+    int check = location / 8;
+    
+    if(check == 7){
         return false;
     }
     return true;

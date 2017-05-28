@@ -9,7 +9,9 @@
 #ifndef PincerMovement_hpp
 #define PincerMovement_hpp
 #include <stdio.h>
+#include"Stone.hpp"
 #include"TableController.hpp"
+#include "Table.hpp"
 
 class PincerMovement : public TableController{
 public:
@@ -23,8 +25,9 @@ public:
     int checkRightOnPincerMovement(stone_status color,int location);
     int checkLeftUnderPincerMovement(stone_status color,int location);
     int checkRightUnderPincerMovement(stone_status color,int location);
-    
     //石を挟む
-    void changePincerMovement(int direction,stone_status color, int location,int pair_location,Stone *table[]);
+    void changePincerMovement(int direction,stone_status color, int location,int pair_location);
+    //テーブルの更新(石を置いた後)
+    void updatePinceredTable(stone_status color, int location,int *check);
 };
 #endif /* PincerMovement_hpp */

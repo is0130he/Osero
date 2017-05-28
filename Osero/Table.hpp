@@ -11,14 +11,11 @@
 
 #include <stdio.h>
 #include"Stone.hpp"
-#include "PincerMovement.hpp"
 
 //一辺の長さ
 #define SIDE_LENGTH 10
 //テーブル配列のサイズ
 #define TABLE_SIZE 64
-//テーブル情報
-Stone *table[TABLE_SIZE];
 
 class Table{
     
@@ -34,8 +31,7 @@ public:
     bool checkCoordinate(int coordinate);
     //テーブルの出力
     void dispTable();
-    //テーブルの更新(石を置いた後)
-    void updateTable(int direction,stone_status color, int location,int pair_location,int *check);
+    
 };
 
 #endif /*Table_hpp*/

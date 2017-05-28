@@ -19,7 +19,7 @@ public:
     //ユーザのターン
     void userTurn(stone_status user_color);
     //AIのターン
-//    void aiTurn(stone_status color);
+    void aiTurn(stone_status color);
     //ユーザ入力により座標を取得
     int getCoordinate(void);
     //石が置けるかチェック

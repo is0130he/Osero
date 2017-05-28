@@ -31,7 +31,7 @@ void Turn::userTurn(stone_status user_color){
         //ユーザ入力により座標取得
         user_coordinate = getCoordinate();
         //石が置けるか確認
-        pincer_instance->checkAllPincerMovement(user_color, user_coordinate, table,check);
+        pincer_instance->checkAllPincerMovement(user_color, user_coordinate, check);
         //方向レベルで置けるかチェック
         flag = checkPincerMovement(check);
         //置けない座標だった場合
@@ -41,9 +41,8 @@ void Turn::userTurn(stone_status user_color){
         //置ける場合
         else{
             //テーブルを更新
-            pincer_instance->changePincerMovement(<#int direction#>, <#stone_status color#>, <#int location#>, <#int pair_location#>, <#Stone **table#>);
-            //テーブルを出力
-            table_instance->dispTable(table);
+            pincer_instance->updatePinceredTable(user_color, user_coordinate, check);            //テーブルを出力
+            table_instance->dispTable();
         }
     }while(flag == false);
     
@@ -83,4 +82,40 @@ int Turn::getCoordinate(void){
             printf("\n\n0~63ではありません。もう一度入力してください。\n\n");
         }
     }
+}
+
+//cpuのターン
+void Turn::aiTurn(stone_status user_color){
+    //インスタンス生成
+    PincerMovement *pincer_instance;
+    pincer_instance = new PincerMovement();
+    Table *table_instance;
+    table_instance = new Table();
+    //ループフラグ
+    bool flag = false;
+    //カウンタ変数
+    int i;
+    
+    //AIのターンであることを表示
+    printf("AIのターンです\n");
+    
+    //石が置けるかチェック用の変数
+    int check[8];
+    
+    //上から座標チェック
+    for(i=0;(i<TABLE_SIZE)&&(flag == false);i++){
+        //石が置けるか確認
+        pincer_instance->checkAllPincerMovement(user_color, i, check);
+        //方向レベルで置けるかチェック
+        flag = checkPincerMovement(check);
+        //置ける座標だった場合
+        if(flag == true){
+            //テーブルを更新
+            pincer_instance->updatePinceredTable(user_color, i,check);
+            //テーブルを出力
+            table_instance->dispTable();
+        }
+    }
+    //AIのターンであることを表示
+    printf("これでAIのターン終了です\n");
 }

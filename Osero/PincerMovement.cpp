@@ -7,6 +7,9 @@
 //
 
 #include "PincerMovement.hpp"
+//テーブル情報
+extern Stone *table[TABLE_SIZE];
+
 void PincerMovement::checkAllPincerMovement(stone_status color,int location,int *check){
     *(check++) = checkOnPincerMovement(color, location);
     *(check++) = checkRightOnPincerMovement(color, location);
@@ -274,9 +277,43 @@ int PincerMovement::checkRightUnderPincerMovement(stone_status color,int locatio
 }
 
 //石を挟む
-void changePincerMovement(int direction,stone_status color, int location,int pair_location){
+void PincerMovement::changePincerMovement(int direction,stone_status color, int location,int pair_location){
     //挟んだ色に変更
     for(;location != pair_location; location += direction){
         table[location]->setStatus(color);
     }
+}
+
+void PincerMovement::updatePinceredTable(stone_status color, int location,int *check){
+    //上から順に時計回りで更新
+    int place;
+    //インスタンス生成
+    PincerMovement *pincer_instance;
+    pincer_instance = new PincerMovement();
+    
+    //上
+    place = pincer_instance->checkOnPincerMovement(color, location);
+    pincer_instance->changePincerMovement(ON, color, location, place);
+    //右上
+    place = pincer_instance->checkRightOnPincerMovement(color, location);
+    pincer_instance->changePincerMovement(RIGHT_ON, color, location, place);
+    //右
+    place = pincer_instance->checkRightPincerMovement(color, location);
+    pincer_instance->changePincerMovement(RIGHT, color, location, place);
+    //右下
+    place = pincer_instance->checkRightUnderPincerMovement(color, location);
+    pincer_instance->changePincerMovement(RIGHT_UNDER, color, location, place);
+    //下
+    place = pincer_instance->checkUnderPincerMovement(color, location);
+    pincer_instance->changePincerMovement(UNDER, color, location, place);
+    //左下
+    place = pincer_instance->checkLeftUnderPincerMovement(color, location);
+    pincer_instance->changePincerMovement(LEFT_UNDER, color, location, place);
+    //左
+    place = pincer_instance->checkLeftPincerMovement(color, location);
+    pincer_instance->changePincerMovement(LEFT, color, location, place);
+    //左上
+    place = pincer_instance->checkLeftOnPincerMovement(color, location);
+    pincer_instance->changePincerMovement(LEFT_ON, color, location, place);
+    
 }
